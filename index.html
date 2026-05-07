@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRANDY - Financial Discipline Tool | Terms & Privacy</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/money-bag.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #e8edf2;
+            color: #2d3a4a;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: #e8edf2;
+            border-radius: 40px;
+            box-shadow:
+                20px 20px 60px #c5c9d0,
+                -20px -20px 60px #ffffff;
+            overflow: hidden;
+            border: none;
+        }
+
+        header {
+            background: #e8edf2;
+            color: #2d3a4a;
+            padding: 45px 35px;
+            text-align: center;
+            position: relative;
+            border-bottom: none;
+            box-shadow: inset 5px 5px 10px #c5c9d0,
+                inset -5px -5px 10px #ffffff;
+            border-radius: 40px 40px 0 0;
+            margin: 15px 15px 0 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            font-size: 3.8rem;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8edf2;
+            border-radius: 50%;
+            box-shadow:
+                8px 8px 16px #c5c9d0,
+                -8px -8px 16px #ffffff;
+            animation: softPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes softPulse {
+            0%,
+            100% {
+                box-shadow: 8px 8px 16px #c5c9d0, -8px -8px 16px #ffffff;
+            }
+            50% {
+                box-shadow: 12px 12px 24px #c5c9d0, -12px -12px 24px #ffffff;
+            }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            color: #1e2b38;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            color: #3a4e62;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .developer-info {
+            background: #e8edf2;
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-top: 15px;
+            box-shadow:
+                6px 6px 12px #c5c9d0,
+                -6px -6px 12px #ffffff;
+            color: #2d3a4a;
+            font-weight: 500;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #e8edf2;
+            margin: 15px;
+            border-radius: 25px;
+            padding: 8px;
+            box-shadow:
+                6px 6px 12px #c5c9d0,
+                -6px -6px 12px #ffffff;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+        }
+
+        .tab-btn {
+            padding: 16px 28px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5a6f7e;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            border-radius: 25px;
+            margin: 0 4px;
+            flex: 1 0 auto;
+        }
+
+        .tab-btn:hover {
+            color: #1e2b38;
+            box-shadow:
+                inset 3px 3px 6px #c5c9d0,
+                inset -3px -3px 6px #ffffff;
+        }
+
+        .tab-btn.active {
+            color: #1e2b38;
+            background: #e8edf2;
+            box-shadow:
+                4px 4px 8px #c5c9d0,
+                -4px -4px 8px #ffffff;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 40px;
+            min-height: 600px;
+            background: transparent;
+            margin: 0 15px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeSlide 0.5s ease;
+            background: #e8edf2;
+            border-radius: 30px;
+            padding: 35px;
+            box-shadow:
+                inset 6px 6px 12px #c5c9d0,
+                inset -6px -6px 12px #ffffff;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #1e2b38;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d0d7de;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #2d3a4a;
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #3a4e62;
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #2d3a4a;
+            line-height: 1.7;
+        }
+
+        ul,
+        ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #2d3a4a;
+        }
+
+        .highlight-box {
+            background: #e8edf2;
+            border-radius: 20px;
+            padding: 22px 28px;
+            margin: 25px 0;
+            box-shadow:
+                4px 4px 8px #c5c9d0,
+                -4px -4px 8px #ffffff;
+            color: #2d3a4a;
+            border-left: none;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: #6c8a9e;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .warning-box {
+            background: #f4e9e1;
+            border-radius: 20px;
+            padding: 22px 28px;
+            margin: 25px 0;
+            box-shadow:
+                4px 4px 8px #d3c9c0,
+                -4px -4px 8px #ffffff;
+            color: #3a302b;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: #c4a27e;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .contact-card {
+            background: #e8edf2;
+            border-radius: 30px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow:
+                8px 8px 16px #c5c9d0,
+                -8px -8px 16px #ffffff;
+        }
+
+        .contact-card h3 {
+            color: #1e2b38;
+            margin-top: 0;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: #e8edf2;
+            color: #2d3a4a;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow:
+                5px 5px 10px #c5c9d0,
+                -5px -5px 10px #ffffff;
+        }
+
+        .email-link:hover {
+            box-shadow:
+                inset 4px 4px 8px #c5c9d0,
+                inset -4px -4px 8px #ffffff;
+            color: #1e2b38;
+            transform: translateY(1px);
+        }
+
+        .last-updated {
+            text-align: center;
+            padding: 15px 20px;
+            color: #5a6f7e;
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .app-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .app-feature {
+            flex: 1;
+            min-width: 240px;
+            background: #e8edf2;
+            padding: 28px;
+            border-radius: 24px;
+            box-shadow:
+                6px 6px 12px #c5c9d0,
+                -6px -6px 12px #ffffff;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            display: block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #e8edf2;
+            border-radius: 50%;
+            box-shadow:
+                4px 4px 8px #c5c9d0,
+                -4px -4px 8px #ffffff;
+        }
+
+        .app-feature h4 {
+            color: #1e2b38;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #5a6f7e;
+            font-size: 0.9rem;
+            margin: 15px;
+            border-radius: 0 0 40px 40px;
+            background: #e8edf2;
+            box-shadow:
+                inset 4px 4px 8px #c5c9d0,
+                inset -4px -4px 8px #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 30px;
+            }
+
+            header {
+                padding: 30px 20px;
+                border-radius: 30px 30px 0 0;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                border-radius: 20px;
+            }
+
+            .tab-btn {
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+
+            .content {
+                padding: 25px 18px;
+            }
+
+            .tab-content {
+                padding: 25px 20px;
+                border-radius: 25px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            border: none;
+            background: #e8edf2;
+            box-shadow:
+                6px 6px 12px #c5c9d0,
+                -6px -6px 12px #ffffff;
+            color: #2d3a4a;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            box-shadow:
+                inset 4px 4px 8px #c5c9d0,
+                inset -4px -4px 8px #ffffff;
+            transform: scale(1.05);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            border: none;
+            background: #e8edf2;
+            box-shadow:
+                6px 6px 12px #c5c9d0,
+                -6px -6px 12px #ffffff;
+            color: #2d3a4a;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            box-shadow:
+                inset 4px 4px 8px #c5c9d0,
+                inset -4px -4px 8px #ffffff;
+            transform: scale(1.05);
+        }
+
+        strong {
+            color: #1e2b38;
+            font-weight: 700;
+        }
+
+        a {
+            color: #3a5a6f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #1e2b38;
+            text-decoration: underline;
+        }
+
+        .group-decision-badge {
+            display: inline-block;
+            background: #e8edf2;
+            color: #2d3a4a;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 10px;
+            box-shadow:
+                inset 2px 2px 4px #c5c9d0,
+                inset -2px -2px 4px #ffffff;
+            letter-spacing: 0.4px;
+        }
+
+        .developer-info strong {
+            color: #1e2b38;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d0d7de;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">💰</div>
+                <div>
+                    <h1>BRANDY <span class="group-decision-badge">Group Decision Ready</span></h1>
+                    <div class="subtitle">Financial Discipline Tool – Income & Expense Tracker | Terms & Google Compliant Privacy Policy</div>
+                </div>
+            </div>
+            <div class="developer-info">
+                <strong>Developer:</strong> kivulideveloper | <strong>Package:</strong> com.travify.brandy | <strong>Support:</strong> kivulideveloperemail@gmail.com
+            </div>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="terms">Terms of Service</button>
+            <button class="tab-btn" data-tab="privacy">Privacy Policy (Google Compliant)</button>
+            <button class="tab-btn" data-tab="data">Data Safety</button>
+            <button class="tab-btn" data-tab="app">About BRANDY</button>
+            <button class="tab-btn" data-tab="contact">Contact Developer</button>
+        </div>
+
+        <div class="content">
+            <!-- Terms of Service Tab -->
+            <div id="terms" class="tab-content active">
+                <h2>Terms of Service</h2>
+                <div class="last-updated">Last Updated: May 7, 2026 (Group Revision)</div>
+
+                <p><strong>These Terms of Service apply to the BRANDY mobile application (package: com.travify.brandy), published on Google Play by kivulideveloper. Approved by group consensus for compliance and clarity.</strong></p>
+
+                <h3>1. Acceptance of Terms</h3>
+                <p>By downloading, installing, or using the BRANDY app ("App"), you agree to be bound by these Terms of Service. If you do not agree, please do not use the App. This agreement is effective as of the date of first use.</p>
+
+                <h3>2. Description of Service</h3>
+                <p>BRANDY is a financial discipline tool that helps users record monthly income, track expenses across custom categories, and maintain a clear overview of their money flow. Core features include:</p>
+                <ul>
+                    <li>Income entry and categorization (salary, freelance, gifts, etc.)</li>
+                    <li>Expense logging with customizable spending categories</li>
+                    <li>Recurring transaction recording and budget planning</li>
+                    <li>Monthly financial summaries and simple spending insights</li>
+                    <li>Secure cloud backup of all financial entries</li>
+                    <li>Optional sharing of expense reports with trusted partners or advisors</li>
+                </ul>
+
+                <h3>3. Financial Disclaimer</h3>
+                <div class="warning-box">
+                    <strong>Important Disclaimer:</strong>
+                    <ul>
+                        <li>BRANDY is a <strong>personal finance tracking tool</strong> only. It does not provide financial advice, investment recommendations, or tax guidance.</li>
+                        <li>All financial decisions based on the data you record are your sole responsibility. Always consult a qualified financial advisor or accountant for professional advice.</li>
+                        <li>The App does not guarantee accuracy of calculations or that data will be free from user input errors.</li>
+                        <li>Do not rely solely on the App for critical financial decisions without independent verification.</li>
+                    </ul>
+                </div>
+
+                <h3>4. User Accounts and Data</h3>
+                <ul>
+                    <li>You are responsible for maintaining account confidentiality and all activities under your account.</li>
+                    <li>Provide accurate, current, and complete information during registration.</li>
+                    <li>You retain full ownership of all income entries, expense logs, budget plans, and financial notes you create.</li>
+                    <li>Data is stored locally on your device and optionally synced to secure, encrypted cloud storage.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Data Backup:</strong> Enable cloud sync to safeguard your financial records. Without sync, uninstalling the App may result in permanent loss of your income and expense history.
+                </div>
+
+                <h3>5. Acceptable Use Policy</h3>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the App for any unlawful, fraudulent, or harmful purpose</li>
+                    <li>Attempt to reverse engineer, decompile, or modify the App's source code</li>
+                    <li>Share your account credentials with others or allow unauthorized access</li>
+                    <li>Upload, post, or transmit content that is abusive, offensive, defamatory, or violates others' rights</li>
+                    <li>Use the App to harass, threaten, or harm anyone</li>
+                    <li>Interfere with the App's operation or security features</li>
+                </ul>
+
+                <h3>6. Responsibility & Safety</h3>
+                <ul>
+                    <li>You acknowledge that building financial discipline requires personal commitment and consistency. The App is a tool, not a guarantee of financial success.</li>
+                    <li>You assume all risks associated with using App records for budgeting, spending decisions, or reporting.</li>
+                </ul>
+
+                <h3>7. User-Generated Content</h3>
+                <ul>
+                    <li>You retain full intellectual property ownership of financial logs, category names, and any notes you create.</li>
+                    <li>You grant BRANDY a limited, non-exclusive, royalty-free license to store and display your content solely to provide the service (including sharing features you initiate).</li>
+                    <li>We reserve the right to remove content that violates these terms or is deemed harmful to others.</li>
+                </ul>
+
+                <h3>8. Subscriptions & Payments (if applicable)</h3>
+                <ul>
+                    <li>Some premium features (e.g., advanced analytics, multi‑currency support, unlimited categories) may require a paid subscription.</li>
+                    <li>Subscriptions auto-renew unless canceled at least 24 hours before the renewal date.</li>
+                    <li>All payments are processed through Google Play Store; refunds follow Google Play Store policies.</li>
+                    <li>Price changes will be communicated in advance.</li>
+                </ul>
+
+                <h3>9. Intellectual Property</h3>
+                <ul>
+                    <li>The App (code, design, branding, and proprietary features) is owned by kivulideveloper.</li>
+                    <li>Your personal financial data, entries, and custom budgets remain your exclusive property.</li>
+                    <li>You may not reproduce, distribute, or create derivative works from App content without explicit written permission.</li>
+                </ul>
+
+                <h3>10. Third-Party Services</h3>
+                <p>The App may integrate with third-party services (analytics, cloud storage, authentication). Use of such services is subject to their respective terms and privacy policies. We are not responsible for third-party practices.</p>
+
+                <h3>11. Disclaimer of Warranties</h3>
+                <p>The App is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied. We do not guarantee that the App will be error-free, uninterrupted, or that calculations will perfectly align with real-world accounts.</p>
+
+                <h3>12. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by applicable law, kivulideveloper shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including financial losses, loss of data, or inaccuracies in manual entries, arising from use of the App.</p>
+
+                <h3>13. Indemnification</h3>
+                <p>You agree to indemnify, defend, and hold harmless kivulideveloper from any claims, damages, or expenses arising from your misuse of the App, violation of these terms, or reliance on App records for financial decisions.</p>
+
+                <h3>14. Changes to Terms</h3>
+                <p>We may update these terms periodically. We will notify users of material changes via in-app notice or email. Continued use after changes constitutes acceptance of the revised terms.</p>
+
+                <h3>15. Termination</h3>
+                <p>You may delete your account and discontinue use at any time. We may suspend or terminate accounts that violate these terms, with or without prior notice.</p>
+
+                <h3>16. Governing Law & Dispute Resolution</h3>
+                <p>These terms are governed by applicable laws. Any disputes shall first be attempted to be resolved through informal negotiation before resorting to formal legal processes.</p>
+
+                <h3>17. Contact Information</h3>
+                <p>For questions about these Terms: <strong>Email:</strong> <a href="mailto:kivulideveloperemail@gmail.com">kivulideveloperemail@gmail.com</a></p>
+            </div>
+
+            <!-- Privacy Policy Tab - Google Compliant -->
+            <div id="privacy" class="tab-content">
+                <h2>Privacy Policy – Google Play Compliant</h2>
+                <div class="last-updated">Last Updated: May 7, 2026 (Group Revision for Full Google Compliance)</div>
+
+                <p><strong>This Privacy Policy applies to BRANDY (package: com.travify.brandy), developed by kivulideveloper. It is designed to fully comply with Google Play's Data Safety requirements, GDPR, CCPA, and other applicable privacy regulations.</strong></p>
+
+                <div class="highlight-box">
+                    <strong>🔒 Privacy Commitment:</strong> We are committed to transparency and user control. This policy clearly explains what data we collect, why, how it is used, shared, protected, and your rights. Your income and expense data belong entirely to you.
+                </div>
+
+                <h3>Developer & Data Controller Information</h3>
+                <ul>
+                    <li><strong>Developer Name:</strong> kivulideveloper</li>
+                    <li><strong>App Package:</strong> com.travify.brandy</li>
+                    <li><strong>Data Controller:</strong> kivulideveloper</li>
+                    <li><strong>Privacy Inquiries Email:</strong> <a href="mailto:kivuliprivacy@gmail.com">kivuliprivacy@gmail.com</a></li>
+                    <li><strong>General Support:</strong> <a href="mailto:kivulideveloperemail@gmail.com">kivulideveloperemail@gmail.com</a></li>
+                    <li><strong>Data Protection Officer (DPO) Contact:</strong> Available via privacy email above</li>
+                </ul>
+
+                <h3>1. Data Collection Summary (Google Data Safety Section Alignment)</h3>
+                <p>We collect the following types of data, as declared in Google Play's Data Safety section:</p>
+
+                <h4>1.1 Personal Information (User-Provided)</h4>
+                <ul>
+                    <li><strong>Account Information:</strong> Name, email address, username (passwords encrypted, never stored plain). <em>Purpose: Account creation and authentication.</em></li>
+                    <li><strong>Financial Profile (Optional):</strong> Preferred currency, income sources, budget limit. <em>Purpose: Personalization of categories and summaries.</em></li>
+                    <li><strong>Income & Expense Data:</strong> Transaction amounts, categories, dates, custom notes. <em>Purpose: Core app functionality; stored locally and optionally in encrypted cloud backup.</em></li>
+                </ul>
+
+                <h4>1.2 Automatically Collected Information</h4>
+                <ul>
+                    <li><strong>Device & App Activity:</strong> Device model, OS version, unique device identifiers, feature interactions. <em>Purpose: Analytics, crash diagnostics, app improvement.</em></li>
+                    <li><strong>Crash Logs & Performance Data:</strong> IP address (temporarily), crash traces. <em>Purpose: App stability.</em></li>
+                </ul>
+
+                <h4>1.3 Data from Third Parties</h4>
+                <ul>
+                    <li><strong>Google Sign-In:</strong> If you authenticate via Google, we receive basic profile data (name, email, profile picture) with your explicit permission. <em>Purpose: Simplified authentication.</em></li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li><strong>App Functionality:</strong> To provide core features – recording income/expenses, categorizing transactions, displaying summaries.</li>
+                    <li><strong>Personalization:</strong> To suggest expense categories based on usage patterns.</li>
+                    <li><strong>Analytics & Improvement:</strong> Aggregated, anonymized usage data helps us improve stability and user experience.</li>
+                    <li><strong>Communication:</strong> Optional reminders for recurring expenses or monthly summaries.</li>
+                    <li><strong>Security & Compliance:</strong> Fraud prevention, legal obligations.</li>
+                </ul>
+
+                <h3>3. Data Sharing & Disclosure</h3>
+                <p><strong>We do NOT sell, rent, or trade your personal or financial data with third parties for their marketing purposes.</strong> Sharing is limited to:</p>
+                <ul>
+                    <li><strong>With Your Consent:</strong> When you choose to share expense reports or summaries with trusted individuals or advisors.</li>
+                    <li><strong>Service Providers:</strong> Trusted processors (e.g., Firebase for analytics, cloud storage) bound by strict contractual confidentiality.</li>
+                    <li><strong>Legal Obligations:</strong> As required by law, regulation, or enforceable governmental request.</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger or acquisition, with continued privacy protection.</li>
+                </ul>
+
+                <h3>4. Data Storage, Security & Transfers</h3>
+                <ul>
+                    <li><strong>Encryption:</strong> All data in transit uses TLS, data at rest encrypted with AES-256.</li>
+                    <li><strong>Local Storage:</strong> Financial entries are primarily stored locally; cloud sync is optional and fully encrypted.</li>
+                    <li><strong>International Transfers:</strong> Adequate safeguards (e.g., Standard Contractual Clauses) are in place.</li>
+                </ul>
+
+                <h3>5. Data Retention & Deletion</h3>
+                <ul>
+                    <li>Active accounts: data retained as long as account is active.</li>
+                    <li>Account deletion: all personal and financial data erased within 90 days; anonymized aggregates may be kept.</li>
+                    <li>Inactive accounts (24 months) may be deleted after notification.</li>
+                </ul>
+
+                <h3>6. Your Privacy Rights (GDPR, CCPA, and Beyond)</h3>
+                <ul>
+                    <li><strong>Access, Rectification, Erasure, Portability</strong> – export your income/expense logs in JSON/CSV format.</li>
+                    <li><strong>Object/Restrict Processing, Withdraw Consent</strong> at any time.</li>
+                    <li><strong>CCPA Rights:</strong> Know, delete, opt-out (we already don't sell), non-discrimination.</li>
+                </ul>
+                <p><strong>To exercise rights:</strong> <a href="mailto:kivuliprivacy@gmail.com">kivuliprivacy@gmail.com</a>. Response within 30 days.</p>
+
+                <h3>7. Children's Privacy</h3>
+                <p>BRANDY is intended for users aged 13+. We do not knowingly collect data from under‑13s. Contact us if you believe a child's data is present.</p>
+
+                <h3>8. Legal Basis (GDPR)</h3>
+                <p>Consent, performance of a contract, legitimate interests for security and improvement.</p>
+
+                <h3>9. Changes to This Policy</h3>
+                <p>Material changes will be notified via in-app notice or email. Continued use signifies acceptance.</p>
+
+                <h3>10. Contact & Complaints</h3>
+                <div class="contact-card">
+                    <h4>Privacy Office</h4>
+                    <p><strong>Primary Contact:</strong> <a href="mailto:kivuliprivacy@gmail.com">kivuliprivacy@gmail.com</a></p>
+                    <p><strong>General Support:</strong> <a href="mailto:kivulideveloperemail@gmail.com">kivulideveloperemail@gmail.com</a></p>
+                    <p>We respond to privacy inquiries within 30 calendar days.</p>
+                    <p style="margin-top: 15px;"><strong>Supervisory Authority:</strong> You have the right to lodge a complaint with your local data protection authority.</p>
+                </div>
+            </div>
+
+            <!-- Data Safety Tab -->
+            <div id="data" class="tab-content">
+                <h2>Data Safety Information – Google Play Compliance</h2>
+                <div class="last-updated">Last Updated: May 7, 2026 (Group Review)</div>
+
+                <p><strong>BRANDY (com.travify.brandy) fully complies with Google Play's Data Safety section requirements. This summary provides transparency about data collection, sharing, and security practices for this financial tracking app.</strong></p>
+
+                <h3>Data Collection Summary (As Declared in Play Console)</h3>
+                <div class="app-info">
+                    <div class="app-feature">
+                        <div class="feature-icon">📋</div>
+                        <h4>Financial Personal Data</h4>
+                        <ul>
+                            <li>Email, name, user ID</li>
+                            <li>Income entries, expense logs</li>
+                            <li>Custom categories & notes</li>
+                            <li><em>Collection: User-provided</em></li>
+                        </ul>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">📊</div>
+                        <h4>App Activity</h4>
+                        <ul>
+                            <li>Feature usage patterns</li>
+                            <li>Transaction entry frequency</li>
+                            <li>Sharing activity (when used)</li>
+                            <li><em>Collection: Automatic</em></li>
+                        </ul>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">🔧</div>
+                        <h4>Device & Diagnostics</h4>
+                        <ul>
+                            <li>Crash logs, performance data</li>
+                            <li>Device model, OS version</li>
+                            <li>Anonymous usage stats</li>
+                            <li><em>Collection: Automatic</em></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Data Usage Purposes</h3>
+                <ul>
+                    <li><strong>App Functionality (Required):</strong> Record income/expenses, manage categories, generate summaries.</li>
+                    <li><strong>Personalization (Optional):</strong> Suggest categories based on habits.</li>
+                    <li><strong>Analytics (Optional):</strong> Improve performance and user experience with anonymized data.</li>
+                    <li><strong>Developer Communications (Optional):</strong> Feature updates, optional reminders.</li>
+                </ul>
+
+                <h3>Data Sharing Practices</h3>
+                <div class="highlight-box">
+                    <strong>Data Sharing Declaration:</strong>
+                    <ul>
+                        <li><strong>User Financial Data:</strong> NOT shared with third parties.</li>
+                        <li><strong>Anonymized Analytics:</strong> Shared with Firebase (data processor) under strict agreements.</li>
+                        <li><strong>User-Initiated Sharing:</strong> Only content you choose to share is transmitted.</li>
+                    </ul>
+                </div>
+
+                <h3>Security Practices (Verified)</h3>
+                <ul>
+                    <li>✅ Data encrypted in transit (TLS) and at rest (AES-256)</li>
+                    <li>✅ No plaintext passwords (hashed & salted)</li>
+                    <li>✅ Regular security assessments</li>
+                </ul>
+
+                <h3>User Control & Choice</h3>
+                <ul>
+                    <li>✅ Delete account anytime – data removal within 24hrs, complete within 90 days</li>
+                    <li>✅ Export all financial logs in JSON/CSV</li>
+                    <li>✅ Opt out of analytics, notifications</li>
+                </ul>
+
+                <h3>Data Retention Schedule</h3>
+                <ul>
+                    <li>Active accounts: data kept as long as needed</li>
+                    <li>Deleted accounts: erasure within 90 days</li>
+                    <li>Backups: purged within 30 days</li>
+                </ul>
+
+                <h3>Age Restrictions</h3>
+                <div class="warning-box">
+                    <strong>Age Requirement: 13+ only.</strong> We do not knowingly collect data from children under 13. Contact <a href="mailto:kivuliprivacy@gmail.com">kivuliprivacy@gmail.com</a> for any concerns.
+                </div>
+
+                <h3>Compliance Certifications</h3>
+                <ul>
+                    <li>✅ Google Play Data Safety (Fully Compliant)</li>
+                    <li>✅ GDPR, CCPA, COPPA</li>
+                </ul>
+
+                <p><strong>Privacy or data questions?</strong> Email <a href="mailto:kivuliprivacy@gmail.com">kivuliprivacy@gmail.com</a> — we respond promptly.</p>
+            </div>
+
+            <!-- About BRANDY Tab -->
+            <div id="app" class="tab-content">
+                <h2>About BRANDY – Financial Discipline Tool</h2>
+                <p><strong>BRANDY</strong> (package: com.travify.brandy) is your smart money companion — designed to help you take note of your monthly income, plan where your money goes, and account for every expense. Whether you're budgeting for the first time or fine‑tuning your financial habits, BRANDY brings clarity and discipline to your personal finances.</p>
+
+                <div class="app-info">
+                    <div class="app-feature">
+                        <div class="feature-icon">💵</div>
+                        <h4>Income Tracking</h4>
+                        <p>Record all income streams – salary, side hustles, gifts – with dates and custom labels.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">🧾</div>
+                        <h4>Expense Logging</h4>
+                        <p>Quickly log spending in categories like food, rent, transport, and more. Know exactly where your money goes.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">📅</div>
+                        <h4>Monthly Overview</h4>
+                        <p>Visual summaries of income vs. expenses each month. Spot trends and adjust spending easily.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">🎯</div>
+                        <h4>Budget Goals</h4>
+                        <p>Set spending limits for different categories and receive gentle nudges when you're close to the limit.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">📤</div>
+                        <h4>Export & Share</h4>
+                        <p>Generate clean expense reports to share with family, accountants, or just for your own records.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">☁️</div>
+                        <h4>Secure Sync</h4>
+                        <p>Optional encrypted backup keeps your financial data safe, even if you change phones.</p>
+                    </div>
+                </div>
+
+                <h3>Why BRANDY?</h3>
+                <ul>
+                    <li><strong>Pure discipline focus:</strong> No ads, no cluttered dashboards – just income and expense clarity.</li>
+                    <li><strong>Privacy‑first:</strong> Your financial data is yours alone. Never sold, never shared without permission.</li>
+                    <li><strong>Offline ready:</strong> Log transactions anytime, even without internet. Sync when you're back online.</li>
+                    <li><strong>Google Compliant:</strong> Fully aligned with Google Play's data safety and global privacy standards.</li>
+                </ul>
+
+                <h3>Who is BRANDY for?</h3>
+                <ul>
+                    <li>Anyone who wants to gain control of their monthly cash flow.</li>
+                    <li>Freelancers and gig workers tracking variable income.</li>
+                    <li>Students managing allowances and part‑time earnings.</li>
+                    <li>Couples or families wanting a simple shared overview (with controlled sharing).</li>
+                </ul>
+
+                <h3>Platform & Availability</h3>
+                <div class="highlight-box">
+                    <p><strong>Platform:</strong> Android (Google Play Store)</p>
+                    <p><strong>Package Name:</strong> com.travify.brandy</p>
+                    <p><strong>Min. OS:</strong> Android 6.0 (Marshmallow) and above</p>
+                    <p><strong>Languages:</strong> English (more coming soon)</p>
+                    <p><strong>Permissions:</strong> Notifications (reminders), Internet (sync & backup)</p>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div id="contact" class="tab-content">
+                <h2>Contact the Developer – Group Decision Ready</h2>
+
+                <div class="contact-card">
+                    <h3>BRANDY Development Team</h3>
+                    <p>Empowering individuals with a clean, private tool to master their money.</p>
+
+                    <div style="margin: 25px 0;">
+                        <h4>📧 General Support & Feedback:</h4>
+                        <a href="mailto:kivulideveloperemail@gmail.com" class="email-link">kivulideveloperemail@gmail.com</a>
+                        <h4 style="margin-top: 20px;">🔐 Privacy & Data Requests (GDPR/CCPA):</h4>
+                        <a href="mailto:kivuliprivacy@gmail.com" class="email-link" style="background: #e8edf2; color:#2d3a4a;">kivuliprivacy@gmail.com</a>
+                    </div>
+                    <p>We read every message. Your money data, your privacy, your peace of mind — all respected.</p>
+                </div>
+
+                <h3>📋 What to Include for Faster Help</h3>
+                <ul>
+                    <li><strong>Subject Line Prefix:</strong> [Bug] / [Feature] / [Privacy] / [Support] / [Account] / [Data Export]</li>
+                    <li><strong>Device Model & Android Version:</strong> e.g., Pixel 7, Android 14</li>
+                    <li><strong>App Version:</strong> Find in BRANDY → Settings → About</li>
+                    <li><strong>Detailed Description:</strong> Steps to reproduce (if reporting a bug)</li>
+                    <li><strong>Screenshots/Recordings:</strong> Optional, but very helpful</li>
+                </ul>
+
+                <h3>Common Inquiries</h3>
+                <ul>
+                    <li><strong>Bug reports:</strong> Crashes, sync errors, calculation issues, transaction deletion problems.</li>
+                    <li><strong>Feature ideas:</strong> Multi-currency, receipt scanning, recurring expense templates, dark mode.</li>
+                    <li><strong>Account deletion:</strong> Send request from your registered email; processed within 48 hours.</li>
+                    <li><strong>Subscription/Refunds:</strong> Handled directly via Google Play Store per their policies.</li>
+                    <li><strong>Data export:</strong> Request a full export of your income and expense records.</li>
+                </ul>
+
+                <h3>⏱️ Response Times (Business Days)</h3>
+                <ul>
+                    <li>Critical bugs/outages: 24-48 hours</li>
+                    <li>General support & questions: 2-4 business days</li>
+                    <li>Privacy rights requests (GDPR/CCPA): within 30 calendar days</li>
+                    <li>Account deletion confirmation: within 48 hours</li>
+                    <li>Data export requests: within 5 business days</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ IMPORTANT – Financial Advice Disclaimer:</strong> BRANDY is a record-keeping tool. It does not offer financial, tax, or investment advice. For professional guidance, consult a certified financial planner or accountant.
+                </div>
+
+                <h3>Business & Media Inquiries</h3>
+                <p>For partnerships, press, or media: <a href="mailto:kivulideveloperemail@gmail.com">kivulideveloperemail@gmail.com</a> with subject "Business Inquiry — BRANDY".</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 kivulideveloper. All rights reserved. | Group Approved for Google Play Submission</p>
+            <p>BRANDY (com.travify.brandy) – Financial Discipline Tool on Google Play. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+            <p>Firebase is a trademark of Google LLC. All other trademarks are property of their respective owners.</p>
+            <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">
+                <strong>Disclaimer:</strong> BRANDY is a personal finance tracking tool only. It does not provide financial advice. Always consult a qualified professional for financial decisions.
+            </p>
+        </footer>
+    </div>
+
+    <button class="print-btn" aria-label="Print this page" title="Print this page">🖨️</button>
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <script>
+        // Tab switching with URL hash support
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                activateTab(tabId);
+            });
+        });
+
+        function activateTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            const targetBtn = document.querySelector(`[data-tab="${tabId}"]`);
+            const targetContent = document.getElementById(tabId);
+
+            if (targetBtn && targetContent) {
+                targetBtn.classList.add('active');
+                targetContent.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState(null, null, `#${tabId}`);
+            }
+        }
+
+        // Print functionality
+        document.querySelector('.print-btn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Back to top button
+        const backBtn = document.querySelector('.back-to-top');
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('show');
+            } else {
+                backBtn.classList.remove('show');
+            }
+        });
+
+        // Initialize page based on URL hash or default
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (['terms', 'privacy', 'data', 'app', 'contact'].includes(hash)) {
+                activateTab(hash);
+            }
+            // Update copyright year dynamically
+            document.querySelector('footer p:first-child').innerHTML =
+                `© ${new Date().getFullYear()} kivulideveloper. All rights reserved. | Group Approved for Google Play Submission`;
+        });
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1) || 'terms';
+            if (['terms', 'privacy', 'data', 'app', 'contact'].includes(hash)) {
+                activateTab(hash);
+            }
+        });
+
+        // Print preparation
+        window.addEventListener('beforeprint', () => {
+            document.querySelector('.print-btn').style.display = 'none';
+            document.querySelector('.back-to-top').style.display = 'none';
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.querySelector('.print-btn').style.display = 'flex';
+            document.querySelector('.back-to-top').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
